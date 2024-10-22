@@ -59,3 +59,10 @@ except Exception as e:
     #print(e)
     logging.info(e)
     sys.exit(1)
+
+# Keep the Telethon bot running
+try:
+    bot.run_until_disconnected()  # For Telethon bot
+    # Bot.idle()  # Uncomment this if you want Pyrogram bot to run in parallel
+except KeyboardInterrupt:
+    print("Bot stopped manually!")
